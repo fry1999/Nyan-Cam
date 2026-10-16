@@ -1,8 +1,6 @@
 import http from 'node:http';
-import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
-const files = { '/': ['index.html', 'text/html; charset=utf-8'], '/app.js': ['app.js', 'text/javascript; charset=utf-8'], '/style.css': ['style.css', 'text/css; charset=utf-8'] };
 const json = (res, status, data) => { res.writeHead(status, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' }); res.end(JSON.stringify(data)); };
 const busy = new Set();
 export const server = http.createServer(async (req, res) => {
@@ -33,10 +31,7 @@ export const server = http.createServer(async (req, res) => {
         return json(res, 200, { advice });
       } finally { busy.delete(client); }
     }
-    if (req.method !== 'GET' || !files[req.url]) return json(res, 404, { error: 'Not found' });
-    const [name, mime] = files[req.url];
-    res.writeHead(200, { 'Content-Type': mime, 'Cache-Control': 'no-cache', 'X-Content-Type-Options': 'nosniff' });
-    res.end(await readFile(fileURLToPath(new URL(`./public/${name}`, import.meta.url))));
+    return json(res, 404, { error: 'Not found' });
   } catch { if (!res.headersSent) json(res, 500, { error: 'Không xử lý được yêu cầu. Vui lòng thử lại.' }); else res.end(); }
 });
 if (process.argv[1] === fileURLToPath(import.meta.url)) server.listen(Number(process.env.PORT) || 3000, '0.0.0.0', () => console.log('Nyan Cam listening on port ' + (process.env.PORT || 3000)));

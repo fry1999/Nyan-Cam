@@ -4,8 +4,11 @@ import { server } from './server.js';
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
 const base = `http://127.0.0.1:${server.address().port}`;
 after(() => server.close());
-test('serves camera UI and scripts', async () => {
-  for (const path of ['/', '/app.js', '/style.css']) { const response = await fetch(base + path); assert.equal(response.status, 200); assert.ok((await response.text()).length > 100); }
+test('serves backend status without a web application', async () => {
+  const response = await fetch(base + '/api/status');
+  assert.equal(response.status, 200);
+  assert.equal(typeof (await response.json()).ai, 'boolean');
+  for (const path of ['/', '/app.js', '/style.css']) assert.equal((await fetch(base + path)).status, 404);
 });
 test('reports missing AI honestly and rejects analysis without configuration', async () => {
   const previous = process.env.NYAN_AI_API_KEY; delete process.env.NYAN_AI_API_KEY;

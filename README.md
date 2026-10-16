@@ -1,6 +1,6 @@
 # Nyan Cam — app iOS / Android
 
-Ứng dụng React Native + Expo Router + TypeScript, giao diện tiếng Việt tông kem/hồng. Mã app nằm trong `mobile/`; backend Node.js và bản web thử nghiệm trước đó nằm ở thư mục gốc và `public/`.
+Ứng dụng React Native + Expo Router + TypeScript, giao diện tiếng Việt tông kem/hồng. Mã app nằm trong `mobile/`; backend Node.js cho AI nằm ở thư mục gốc.
 
 ## Tính năng app native
 
@@ -10,7 +10,7 @@
 - AI nhận xét ánh sáng/bố cục từ **ảnh gần nhất đã chụp**, sau khi người dùng xác nhận. Không gửi luồng camera liên tục. Ảnh được thu nhỏ trước khi gửi, khóa OpenAI chỉ nằm ở backend.
 - Màn hình cài đặt để nhập địa chỉ backend; camera và thư viện không cần backend hoặc khóa AI.
 
-Chưa có bộ lọc native, làm đẹp, tự chọn ảnh đẹp, tài khoản hoặc đồng bộ đám mây. Bộ lọc của bản web cũ chưa được chuyển sang native.
+Chưa có bộ lọc màu, làm đẹp, tự chọn ảnh đẹp, tài khoản hoặc đồng bộ đám mây.
 
 ## Chạy trên điện thoại
 
