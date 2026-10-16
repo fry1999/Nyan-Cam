@@ -2,6 +2,8 @@
 
 Ứng dụng React Native + Expo Router + TypeScript, giao diện tiếng Việt tông kem/hồng. Mã app nằm trong `mobile/`; backend Node.js cho AI nằm ở thư mục gốc.
 
+App chỉ hỗ trợ Android và iOS. Khi chạy Metro, mở dự án bằng **Expo Go trên điện thoại**; chế độ web đã tắt và không cần `react-native-web`.
+
 ## Tính năng app native
 
 - Camera trước/sau, flash camera sau, lưới căn khung, hẹn giờ 3/5 giây.
