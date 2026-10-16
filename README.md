@@ -1,6 +1,6 @@
 # Nyan Cam — app iOS / Android
 
-Ứng dụng React Native + Expo + TypeScript, giao diện tiếng Việt tông kem/hồng. Mã app nằm trong `mobile/`; backend Node.js và bản web thử nghiệm trước đó nằm ở thư mục gốc và `public/`.
+Ứng dụng React Native + Expo Router + TypeScript, giao diện tiếng Việt tông kem/hồng. Mã app nằm trong `mobile/`; backend Node.js và bản web thử nghiệm trước đó nằm ở thư mục gốc và `public/`.
 
 ## Tính năng app native
 
@@ -59,12 +59,13 @@ Từ thư mục gốc:
 npm test
 cd mobile
 npm run typecheck
+npm run lint
 npm run export:check
 ```
 
 `npm test` ở gốc chạy cả test backend và test client API mobile (9 bài). Các test AI mô phỏng phản hồi nhà cung cấp, không gọi AI trả phí. `export:check` tạo bundle JavaScript/Hermes cho iOS và Android; **không phải APK/IPA hoặc kiểm thử trên thiết bị**.
 
-Đã kiểm tra trong cloud: TypeScript, 9 test, Expo native config và xuất bundle iOS/Android. Chưa kiểm tra camera/quyền thư viện trên thiết bị thật và chưa gọi AI thật do chưa cấu hình khóa.
+Đã kiểm tra trong cloud: TypeScript, lint, 9 test, Expo native config và xuất bundle iOS/Android. Chưa kiểm tra camera/quyền thư viện trên thiết bị thật và chưa gọi AI thật do chưa cấu hình khóa.
 
 Checklist trên điện thoại trước phát hành:
 
