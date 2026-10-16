@@ -14,13 +14,15 @@ Chưa có bộ lọc màu, làm đẹp, tự chọn ảnh đẹp, tài khoản h
 
 ## Chạy trên điện thoại
 
-Yêu cầu Node.js **24.3+ (nhánh 24 LTS)**, npm và Expo Go tương thích **Expo SDK 58**. Dùng phiên bản Node 24 LTS hiện hành đáp ứng yêu cầu này. Nếu Expo Go trên thiết bị không hỗ trợ SDK này, dùng development build tương ứng.
+Yêu cầu Node.js **24.3+ (nhánh 24 LTS)**, npm và **Expo Go 57** trên điện thoại. Dùng phiên bản Node 24 LTS hiện hành đáp ứng yêu cầu này.
 
 ```sh
 cd mobile
 npm ci
 npm start
 ```
+
+Sau khi đổi từ SDK 58 sang 57, dừng Metro cũ và chạy `npm start -- --clear` một lần để xóa cache trước khi quét QR mới. Nếu điện thoại vẫn mở phiên cũ, đóng hẳn app trong Expo Go rồi quét lại.
 
 Quét QR bằng Expo Go trên Android hoặc Camera/Expo Go trên iPhone. Máy chạy Metro và điện thoại cần kết nối được với nhau (thường cùng Wi-Fi). Cấp quyền camera khi được hỏi. Một môi trường cloud không truy cập được từ điện thoại sẽ cần kết nối mạng/tunnel phù hợp; không mặc định QR của cloud có thể dùng trực tiếp.
 

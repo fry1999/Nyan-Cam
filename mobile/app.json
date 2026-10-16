@@ -42,7 +42,9 @@
           ]
         }
       ],
-      "expo-router"
+      "expo-router",
+      "expo-sharing",
+      "expo-status-bar"
     ],
     "scheme": "nyancam"
   }
