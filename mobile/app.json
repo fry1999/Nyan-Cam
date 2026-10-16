@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "Nyan Cam",
+    "slug": "nyan-cam",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#FBF7F2",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nyancam.app"
+    },
+    "android": {
+      "package": "com.nyancam.app",
+      "permissions": [
+        "android.permission.CAMERA"
+      ],
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_MEDIA_AUDIO",
+        "android.permission.READ_MEDIA_VIDEO"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Nyan Cam cần camera để chụp những khoảnh khắc của bạn.",
+          "recordAudioAndroid": false,
+          "microphonePermission": false,
+          "barcodeScannerEnabled": false
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Nyan Cam cần quyền ảnh khi bạn lưu ảnh vào thư viện.",
+          "savePhotosPermission": "Cho phép Nyan Cam lưu ảnh bạn chọn vào thư viện.",
+          "granularPermissions": [
+            "photo"
+          ]
+        }
+      ],
+      "expo-router"
+    ],
+    "scheme": "nyancam"
+  }
+}
